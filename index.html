@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Роман | Фотограф</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            border-bottom: 2px solid #000;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            margin: 2rem 0;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 2rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav a:hover {
+            border-color: #333;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            padding: 2rem;
+            border: 1px solid #ddd;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            border-top: 1px solid #000;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Роман</h1>
+        <nav>
+            <a href="#">Портфолио</a>
+            <a href="#">Обо мне</a>
+            <a href="#">Услуги</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <article class="card">
+                <h2>Портретная съемка</h2>
+                <p>Индивидуальные портреты в естественном стиле</p>
+            </article>
+            <article class="card">
+                <h2>Love Story</h2>
+                <p>Атмосферная фотосессия в разных локациях</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Роман. Фотограф.</p>
+    </footer>
+</body>
+</html>
