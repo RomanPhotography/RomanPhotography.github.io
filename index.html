@@ -10,19 +10,19 @@
         
         body { 
             font-family: 'Inter', sans-serif; 
-            color: #e0e0e0; 
-            background: #0a0a0a;
+            color: #2c2c2c; 
+            background: #ffffff;
             line-height: 1.7;
         }
         
         /* ШАПКА */
         header {
             position: fixed; top: 0; width: 100%;
-            background: rgba(10, 10, 10, 0.9); 
+            background: rgba(255, 255, 255, 0.95); 
             padding: 25px 0; 
             z-index: 1000;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #f0f0f0;
         }
         .nav-container {
             max-width: 1200px; margin: 0 auto;
@@ -34,19 +34,19 @@
             font-size: 28px; 
             font-weight: 400; 
             text-decoration: none; 
-            color: #e0e0e0; 
+            color: #2c2c2c; 
             letter-spacing: 1px;
         }
         nav a { 
             margin-left: 50px; 
             text-decoration: none; 
-            color: #b0b0b0; 
+            color: #666; 
             font-weight: 300;
             font-size: 15px;
             letter-spacing: 1px;
             transition: all 0.3s ease; 
         }
-        nav a:hover { color: #ffffff; }
+        nav a:hover { color: #2c2c2c; }
         
         /* ГЛАВНЫЙ ЭКРАН */
         .hero {
@@ -55,58 +55,92 @@
             align-items: center; 
             justify-content: center;
             text-align: center; 
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
             position: relative;
             overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(100, 100, 100, 0.1) 0%, transparent 50%);
-        }
         .hero-content h1 { 
             font-family: 'Playfair Display', serif;
-            font-size: 72px; 
+            font-size: 84px; 
             font-weight: 400; 
             margin-bottom: 30px; 
-            color: #ffffff;
-            letter-spacing: 3px;
+            color: #2c2c2c;
+            letter-spacing: 4px;
         }
         .hero-content .subtitle { 
             font-size: 18px; 
-            color: #b0b0b0; 
+            color: #666; 
             letter-spacing: 4px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
             font-weight: 300;
         }
         
-        /* КРАСИВАЯ НАДПИСЬ В СТИЛЕ TIMSHOT */
+        /* УВЕЛИЧЕННАЯ КРАСИВАЯ НАДПИСЬ */
         .elegant-quote {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 24px;
-            color: #d4af37;
-            line-height: 1.8;
-            max-width: 600px;
+            font-size: 32px;
+            color: #2c2c2c;
+            line-height: 1.6;
+            max-width: 800px;
             margin: 0 auto;
-            border-left: 2px solid #d4af37;
-            padding-left: 30px;
-            text-align: left;
+            padding: 40px 0;
+            text-align: center;
+            letter-spacing: 2px;
         }
         .quote-line {
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             opacity: 0;
-            animation: fadeInUp 1s ease forwards;
+            animation: fadeInUp 1.5s ease forwards;
         }
         .quote-line:nth-child(1) { animation-delay: 0.5s; }
-        .quote-line:nth-child(2) { animation-delay: 1s; }
-        .quote-line:nth-child(3) { animation-delay: 1.5s; }
+        .quote-line:nth-child(2) { animation-delay: 1.2s; }
+        .quote-line:nth-child(3) { animation-delay: 2s; }
         
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* РАЗДЕЛ "ОБО МНЕ" */
+        .about {
+            padding: 120px 40px;
+            background: #fafafa;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .avatar {
+            width: 100%;
+            border-radius: 2px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #2c2c2c;
+            font-weight: 400;
+        }
+        .about-text p {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: #2c2c2c;
+            margin-top: 30px;
         }
         
         /* ПОРТФОЛИО */
@@ -124,7 +158,7 @@
         .portfolio-item {
             position: relative; 
             aspect-ratio: 4/5; 
-            background: #1a1a1a; 
+            background: #f5f5f5; 
             overflow: hidden;
             border-radius: 2px;
         }
@@ -133,17 +167,15 @@
             height: 100%; 
             object-fit: cover;
             transition: all 0.5s ease;
-            filter: grayscale(30%);
         }
         .portfolio-item:hover img { 
-            transform: scale(1.05); 
-            filter: grayscale(0%);
+            transform: scale(1.05);
         }
         
         /* УСЛУГИ */
         .services { 
             padding: 120px 40px; 
-            background: #111111; 
+            background: #ffffff; 
             text-align: center; 
         }
         .services-grid {
@@ -157,12 +189,12 @@
             font-family: 'Playfair Display', serif;
             font-size: 22px; 
             margin: 25px 0 15px; 
-            color: #ffffff;
+            color: #2c2c2c;
             font-weight: 400;
         }
         .service-item p { 
             font-size: 15px; 
-            color: #b0b0b0; 
+            color: #666; 
             line-height: 1.8; 
             font-weight: 300;
         }
@@ -178,23 +210,47 @@
             margin-top: 50px; 
             line-height: 2.5;
             font-size: 16px;
-            color: #b0b0b0;
+            color: #666;
         }
         .contact-info a {
-            color: #d4af37;
+            color: #2c2c2c;
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
         .contact-info a:hover {
-            color: #ffffff;
+            color: #000000;
+        }
+        
+        /* ПРИЗЫВ К ДЕЙСТВИЮ */
+        .cta-section {
+            padding: 100px 40px;
+            background: #fafafa;
+            text-align: center;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        .cta-button:hover {
+            background: #000000;
+            transform: translateY(-3px);
         }
         
         /* ФУТЕР */
         footer { 
             padding: 80px 40px; 
             text-align: center; 
-            background: #0a0a0a; 
-            border-top: 1px solid #333;
+            background: #2c2c2c; 
+            color: #fff;
         }
         
         /* ЗАГОЛОВКИ */
@@ -204,25 +260,37 @@
             font-weight: 400; 
             text-align: center; 
             margin-bottom: 20px; 
-            color: #ffffff;
+            color: #2c2c2c;
             letter-spacing: 2px;
         }
         .section-subtitle { 
             font-size: 16px; 
-            color: #b0b0b0; 
+            color: #666; 
             text-align: center; 
             letter-spacing: 3px;
             font-weight: 300;
         }
         
         /* АДАПТИВНОСТЬ */
+        @media (max-width: 968px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .avatar {
+                width: 300px;
+                margin: 0 auto;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 25px; padding: 0 20px; }
             nav a { margin: 0 12px; font-size: 14px; }
             .hero-content h1 { font-size: 48px; }
             .portfolio-grid { grid-template-columns: 1fr; padding: 0 20px; }
-            .elegant-quote { font-size: 20px; padding-left: 20px; }
+            .elegant-quote { font-size: 24px; }
             .section-title { font-size: 36px; }
+            .about { padding: 80px 20px; }
         }
     </style>
 </head>
@@ -231,6 +299,7 @@
         <div class="nav-container">
             <a href="#" class="logo">ROMAN</a>
             <nav>
+                <a href="#about">ОБО МНЕ</a>
                 <a href="#portfolio">ПОРТФОЛИО</a>
                 <a href="#services">УСЛУГИ</a>
                 <a href="#contact">КОНТАКТЫ</a>
@@ -243,7 +312,7 @@
             <h1>РОМАН</h1>
             <div class="subtitle">ФОТОГРАФ</div>
             
-            <!-- КРАСИВАЯ НАДПИСЬ В СТИЛЕ TIMSHOT -->
+            <!-- УВЕЛИЧЕННАЯ КРАСИВАЯ НАДПИСЬ -->
             <div class="elegant-quote">
                 <span class="quote-line">Один момент,</span>
                 <span class="quote-line">один кадр,</span>
@@ -252,43 +321,69 @@
         </div>
     </section>
 
+    <!-- РАЗДЕЛ "ОБО МНЕ" -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <img src="https://via.placeholder.com/600x800/f5f5f5/666?text=ВАША+ФОТО" alt="Роман" class="avatar">
+            <div class="about-text">
+                <h2>Моя философия</h2>
+                <p>В каждом из нас живёт уникальная история, которая заслуживает быть рассказанной. Я не просто создаю фотографии — я помогаю вам раскрыть вашу истинную сущность, ту самую, которую вы иногда прячете даже от самих себя.</p>
+                
+                <p>Моя миссия — создавать не просто красивые кадры, а настоящие произведения искусства, которые будут говорить о вас громче любых слов. Когда вы смотрите на эти фотографии через годы, вы должны чувствовать те же эмоции, что и в момент съёмки.</p>
+                
+                <p>Я верю, что каждая девушка — это вселенная, полная загадок и красоты. Моя задача — помочь вам увидеть эту красоту в себе и сохранить её в timeless-фотографиях, которые будут актуальны всегда.</p>
+                
+                <p>Давайте создадим вместе нечто большее, чем просто фото — давайте создадим историю, которую вы будете с гордостью показывать своим детям и внукам.</p>
+                
+                <div class="signature">С любовью к искусству,<br>Роман</div>
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio" class="portfolio">
         <h2 class="section-title">Портфолио</h2>
-        <p class="section-subtitle">ИЗБРАННЫЕ РАБОТЫ</p>
+        <p class="section-subtitle">ИСТОРИИ В КАДРАХ</p>
         
         <div class="portfolio-grid">
-            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/222/666?text=PORTRAIT" alt="Портрет"></div>
-            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/222/666?text=LOVE+STORY" alt="Love Story"></div>
-            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/222/666?text=WEDDING" alt="Свадьба"></div>
-            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/222/666?text=FASHION" alt="Фэшн"></div>
-            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/222/666?text=ART" alt="Арт"></div>
-            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/222/666?text=CREATIVE" alt="Креатив"></div>
+            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/f5f5f5/666?text=PORTRAIT" alt="Портрет"></div>
+            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/f5f5f5/666?text=LOVE+STORY" alt="Love Story"></div>
+            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/f5f5f5/666?text=ART" alt="Арт"></div>
+            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/f5f5f5/666?text=EMOTIONS" alt="Эмоции"></div>
+            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/f5f5f5/666?text=BEAUTY" alt="Красота"></div>
+            <div class="portfolio-item"><img src="https://via.placeholder.com/600x750/f5f5f5/666?text=DREAM" alt="Мечта"></div>
         </div>
     </section>
 
     <section id="services" class="services">
         <h2 class="section-title">Услуги</h2>
-        <p class="section-subtitle">ЧТО Я ПРЕДЛАГАЮ</p>
+        <p class="section-subtitle">СОЗДАДИМ ИСКУССТВО ВМЕСТЕ</p>
 
         <div class="services-grid">
             <div class="service-item">
-                <h3>Портретная съёмка</h3>
-                <p>Индивидуальные портреты, раскрывающие характер и эмоции. Студийная и естественная съёмка.</p>
+                <h3>Портретная трансформация</h3>
+                <p>Не просто фотосессия, а настоящее преображение. Раскроем вашу уникальную красоту через искусство портрета.</p>
             </div>
             <div class="service-item">
                 <h3>Love Story</h3>
-                <p>Интимные и романтические фотосессии для пар, передающие историю ваших отношений.</p>
+                <p>Ваша история любви, запечатлённая в самых искренних моментах. Создадим романтическую сказку вместе.</p>
             </div>
             <div class="service-item">
-                <h3>Свадебная фотография</h3>
-                <p>Полное сопровождение свадебного дня с акцентом на искренние эмоции и детали.</p>
+                <h3>Арт-проект</h3>
+                <p>Для тех, кто хочет выйти за рамки обычного. Создадим художественные образы, которые расскажут вашу историю.</p>
             </div>
         </div>
     </section>
 
+    <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
+    <section class="cta-section">
+        <h2 class="section-title">Готовы стать частью искусства?</h2>
+        <p class="section-subtitle">ДАВАЙТЕ СОЗДАДИМ ЧТО-ТО УНИКАЛЬНОЕ ВМЕСТЕ</p>
+        <a href="#contact" class="cta-button">ЗАПИСАТЬСЯ НА СЪЁМКУ</a>
+    </section>
+
     <section id="contact" class="contact">
         <h2 class="section-title">Контакты</h2>
-        <p class="section-subtitle">ДАВАЙТЕ СОТРУДНИЧАТЬ</p>
+        <p class="section-subtitle">ДАВАЙТЕ НАЧНЁМ ДИАЛОГ</p>
 
         <div class="contact-info">
             <p>ТЕЛЕФОН: <a href="tel:+7XXXXXXXXXX">+7 XXX XXX XX XX</a></p>
@@ -298,7 +393,7 @@
     </section>
 
     <footer>
-        <p>© 2024 ROMAN PHOTOGRAPHY. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+        <p>© 2024 ROMAN PHOTOGRAPHY. ИСКУССТВО В КАЖДОМ КАДРЕ.</p>
     </footer>
 
     <script>
@@ -320,10 +415,10 @@
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.padding = '15px 0';
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
                 header.style.padding = '25px 0';
-                header.style.background = 'rgba(10, 10, 10, 0.9)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
     </script>
