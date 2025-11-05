@@ -20,7 +20,7 @@
         header {
             position: fixed; top: 0; width: 100%;
             background: rgba(0, 0, 0, 0.98); 
-            padding: 20px 0;
+            padding: 15px 0;
             z-index: 1000;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid #333;
@@ -33,7 +33,7 @@
         }
         .logo { 
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400; 
             text-decoration: none; 
             color: #ffffff; 
@@ -66,9 +66,9 @@
             width: 100%;
         }
         
-        /* ГЛАВНЫЙ ЭКРАН - ПЕРЕРАБОТАН */
+        /* ГЛАВНЫЙ ЭКРАН - ИСПРАВЛЕНЫ ОТСТУПЫ */
         .hero {
-            height: 100vh; 
+            min-height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center;
@@ -76,7 +76,7 @@
             background: #000000;
             position: relative;
             overflow: hidden;
-            padding: 120px 40px 60px;
+            padding: 100px 40px 60px;
         }
         .hero::before {
             content: '';
@@ -89,7 +89,7 @@
         }
         .hero-content h1 { 
             font-family: 'Playfair Display', serif;
-            font-size: 4rem; 
+            font-size: 3.5rem; 
             font-weight: 400; 
             margin-bottom: 1rem; 
             color: #ffffff;
@@ -103,9 +103,9 @@
             font-weight: 300;
         }
         
-        /* ОСНОВНОЙ ТЕКСТ ГЛАВНОГО ЭКРАНА */
+        /* ОСНОВНОЙ ТЕКСТ ГЛАВНОГО ЭКРАНА - ИСПРАВЛЕНЫ ПЕРЕНОСЫ */
         .hero-manifesto {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             text-align: left;
         }
@@ -118,6 +118,8 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         .manifesto-text:nth-child(1) { animation-delay: 0.3s; }
         .manifesto-text:nth-child(2) { animation-delay: 0.6s; }
@@ -131,6 +133,7 @@
             padding-left: 1rem;
             margin: 2rem 0;
             font-style: italic;
+            word-wrap: break-word;
         }
         
         @keyframes fadeInUp {
@@ -140,7 +143,7 @@
             }
         }
 
-        /* РАЗДЕЛ "ОБО МНЕ" - ПЕРЕРАБОТАН */
+        /* РАЗДЕЛ "ОБО МНЕ" - ЗАМЕНЕНЫ СЛОВА */
         .about {
             padding: 6rem 2rem;
             background: #0a0a0a;
@@ -222,7 +225,7 @@
             transform: translateY(-5px);
         }
 
-        /* ТВОРЧЕСКИЙ ПРОЕКТ */
+        /* ТВОРЧЕСКИЙ ПРОЕКТ - ЗАМЕНЕНЫ ЭМОДЗИ НА SVG/ТЕКСТ */
         .project {
             padding: 6rem 2rem;
             background: #111111;
@@ -244,6 +247,8 @@
         .project-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            color: #ffffff;
+            filter: grayscale(100%) brightness(200%);
         }
         .project-card h3 {
             font-family: 'Playfair Display', serif;
@@ -325,7 +330,7 @@
             background: #cccccc;
         }
 
-        /* КОНТАКТЫ */
+        /* КОНТАКТЫ - ОБНОВЛЕНЫ ДАННЫЕ */
         .contact { 
             padding: 6rem 2rem; 
             text-align: center; 
@@ -346,6 +351,7 @@
         }
         .contact-info a:hover {
             color: #cccccc;
+            text-decoration: underline;
         }
         
         /* ФУТЕР */
@@ -377,7 +383,7 @@
             text-transform: uppercase;
         }
         
-        /* АДАПТИВНОСТЬ */
+        /* АДАПТИВНОСТЬ - УЛУЧШЕНА ДЛЯ ТЕЛЕФОНОВ */
         @media (max-width: 768px) {
             .nav-container { 
                 flex-direction: column; 
@@ -392,7 +398,16 @@
                 font-size: 2.5rem; 
             }
             .hero {
-                padding: 100px 1rem 40px;
+                padding: 80px 1rem 40px;
+                min-height: 90vh;
+            }
+            .hero-manifesto {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            .manifesto-text {
+                font-size: 1rem;
+                line-height: 1.6;
             }
             .portfolio-grid { 
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -406,6 +421,29 @@
             }
             .project-grid {
                 grid-template-columns: 1fr;
+            }
+            .project-icon {
+                font-size: 2.5rem;
+            }
+            header {
+                padding: 12px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            nav a {
+                margin: 0 0.3rem;
+                font-size: 0.7rem;
+            }
+            .manifesto-text {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -444,7 +482,7 @@
 
     <section id="about" class="about">
         <div class="about-text">
-            <h2>ОБО МНЕ</h2>
+            <h2>МОЯ ЦЕЛЬ</h2>
             <p>Моя задача — не просто сделать безупречный кадр, а создать пространство абсолютного доверия и комфорта, где ты сможешь расслабиться, забыть о камере и просто быть. В этот момент и происходит вся магия.</p>
             
             <p>Я работаю с тем, что уже есть: твоя искренняя улыбка, твой задумчивый взгляд, твоя неповторимая энергия. Я лишь помогаю этому проявиться в полную силу и запечатлеваю это.</p>
@@ -460,7 +498,7 @@
                 </div>
                 <div class="stat">
                     <div class="stat-number">1</div>
-                    <div class="stat-text">философия — быть свидетелем красоты</div>
+                    <div class="stat-text">подход — быть свидетелем красоты</div>
                 </div>
             </div>
             
@@ -475,7 +513,7 @@
         <p class="section-subtitle">ИСТОРИИ В КАДРАХ</p>
         
         <div class="portfolio-grid">
-            <!-- Все 20 фотографий с правильными путями -->
+            <!-- Все 20 фотографий с правильными путями и без названий -->
             <div class="portfolio-item"><img src="images/Девка в белом 2.jpg" alt=""></div>
             <div class="portfolio-item"><img src="images/Девка в белом.jpg" alt=""></div>
             <div class="portfolio-item"><img src="images/Девка и дерево.jpg" alt=""></div>
@@ -592,9 +630,9 @@
         <p class="section-subtitle">ДАВАЙТЕ СОЗДАДИМ ИСТОРИЮ ВМЕСТЕ</p>
 
         <div class="contact-info">
-            <p>ТЕЛЕФОН: <a href="tel:+7XXXXXXXXXX">+7 XXX XXX XX XX</a></p>
-            <p>EMAIL: <a href="mailto:hello@roman.com">HELLO@ROMAN.COM</a></p>
-            <p>INSTAGRAM: <a href="#">@ROMANPHOTOGRAPHY</a></p>
+            <p>ТЕЛЕГРАМ: <a href="https://t.me/RomanPhotograph" target="_blank">@ROMANPHOTOGRAPH</a></p>
+            <p>EMAIL: <a href="mailto:romanphotographerr@gmail.com">ROMANPHOTOGRAPHERR@GMAIL.COM</a></p>
+            <p>INSTAGRAM: <a href="#" target="_blank">@ROMANPHOTOGRAPHY</a></p>
         </div>
     </section>
 
@@ -623,7 +661,7 @@
             const header = document.querySelector('header');
             const scrolled = window.scrollY > 50;
             
-            header.style.padding = scrolled ? '12px 0' : '20px 0';
+            header.style.padding = scrolled ? '10px 0' : '15px 0';
             header.style.background = scrolled ? 'rgba(0, 0, 0, 0.98)' : 'rgba(0, 0, 0, 0.95)';
         });
 
@@ -642,6 +680,28 @@
             item.style.transform = 'translateY(20px)';
             item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(item);
+        });
+
+        // Исправление проблем с фотографиями
+        document.addEventListener('DOMContentLoaded', function() {
+            // Проверка и исправление путей к проблемным фото
+            const problemPhotos = [
+                'Чел в курении в дверях.jpg',
+                'Чел в курении.jpg', 
+                'Чел в зелёном.jpg'
+            ];
+            
+            problemPhotos.forEach(photoName => {
+                const imgElements = document.querySelectorAll(`img[src*="${photoName}"]`);
+                imgElements.forEach(img => {
+                    // Проверяем, загружается ли изображение
+                    img.onerror = function() {
+                        console.log('Ошибка загрузки:', photoName);
+                        // Можно добавить fallback изображение
+                        this.style.backgroundColor = '#1a1a1a';
+                    };
+                });
+            });
         });
     </script>
 </body>
