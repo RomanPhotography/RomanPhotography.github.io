@@ -20,7 +20,7 @@
         header {
             position: fixed; top: 0; width: 100%;
             background: rgba(0, 0, 0, 0.98); 
-            padding: 20px 0;
+            padding: 25px 0;
             z-index: 1000;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid #333;
@@ -33,18 +33,18 @@
         }
         .logo { 
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 400; 
             text-decoration: none; 
             color: #ffffff; 
             letter-spacing: 1.5px;
         }
         nav a { 
-            margin-left: 40px; 
+            margin-left: 50px; 
             text-decoration: none; 
             color: #cccccc; 
             font-weight: 300;
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: 1.5px;
             transition: all 0.3s ease; 
             position: relative;
@@ -66,7 +66,7 @@
             width: 100%;
         }
         
-        /* ГЛАВНЫЙ ЭКРАН - УВЕЛИЧЕНО ИМЯ */
+        /* УЛУЧШЕННЫЙ ГЛАВНЫЙ ЭКРАН - БОЛЬШОЙ ROMAN */
         .hero {
             height: 100vh; 
             display: flex; 
@@ -89,18 +89,18 @@
         }
         .hero-content h1 { 
             font-family: 'Playfair Display', serif;
-            font-size: 6rem; /* УВЕЛИЧЕНО ДЛЯ БРЕНДА */
+            font-size: 7rem; /* УВЕЛИЧЕНО ДЛЯ БРЕНДА */
             font-weight: 400; 
             margin-bottom: 1rem; 
             color: #ffffff;
             letter-spacing: 3px;
-            line-height: 1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         .hero-subtitle { 
             font-size: 1rem; 
             color: #cccccc; 
             letter-spacing: 3px;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             font-weight: 300;
         }
         
@@ -114,7 +114,7 @@
             font-size: 1.1rem;
             color: #cccccc;
             line-height: 1.8;
-            margin-bottom: 2.5rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            margin-bottom: 2rem;
             font-weight: 300;
             opacity: 0;
             transform: translateY(20px);
@@ -130,9 +130,8 @@
             font-weight: 400;
             border-left: 2px solid #ffffff;
             padding-left: 1rem;
-            margin: 2.5rem 0;
+            margin: 2rem 0;
             font-style: italic;
-            font-size: 1.2rem;
         }
         
         @keyframes fadeInUp {
@@ -142,9 +141,9 @@
             }
         }
 
-        /* РАЗДЕЛ "ОБО МНЕ" - ПЕРЕИМЕНОВАН */
+        /* РАЗДЕЛ "ОБО МНЕ" - ПЕРЕРАБОТАН */
         .about {
-            padding: 8rem 2rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            padding: 8rem 2rem; /* УВЕЛИЧЕН ОТСТУП */
             background: #0a0a0a;
             max-width: 800px;
             margin: 0 auto;
@@ -161,8 +160,26 @@
             font-size: 1.1rem;
             color: #cccccc;
             line-height: 1.8;
-            margin-bottom: 2.5rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            margin-bottom: 2rem;
             font-weight: 300;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            font-weight: 400;
+        }
+        .stat-text {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-top: 0.5rem;
         }
         
         /* ВЫДЕЛЕННЫЙ БЛОК С РЕЗУЛЬТАТАМИ */
@@ -181,43 +198,27 @@
             font-weight: 400;
         }
         .results-list {
-            color: #cccccc;
-            line-height: 1.8;
+            list-style: none;
+            padding: 0;
         }
-        .results-list p {
+        .results-list li {
+            color: #ffffff;
             margin-bottom: 1rem;
-            position: relative;
             padding-left: 1.5rem;
-        }
-        .results-list p::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #ffffff;
-        }
-        
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
-            text-align: center;
-        }
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #ffffff;
+            position: relative;
             font-weight: 400;
         }
-        .stat-text {
-            font-size: 0.9rem;
-            color: #cccccc;
-            margin-top: 0.5rem;
+        .results-list li::before {
+            content: '•';
+            color: #ffffff;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
         }
         
         /* УЛУЧШЕННОЕ ПОРТФОЛИО С СКРЫТЫМИ НАЗВАНИЯМИ */
         .portfolio { 
-            padding: 8rem 2rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            padding: 8rem 2rem; /* УВЕЛИЧЕН ОТСТУП */
             max-width: 1400px; 
             margin: 0 auto; 
         }
@@ -225,7 +226,7 @@
         .portfolio-grid {
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            gap: 1.5rem; 
             margin-top: 4rem;
         }
         
@@ -234,9 +235,26 @@
             aspect-ratio: 3/4; 
             background: #1a1a1a; 
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 8px;
             transition: all 0.4s ease;
             cursor: pointer;
+        }
+        
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .portfolio-item:hover::before {
+            opacity: 1;
         }
         
         .portfolio-item img {
@@ -244,100 +262,113 @@
             height: 100%; 
             object-fit: cover;
             transition: all 0.6s ease;
-            filter: grayscale(30%) contrast(110%);
+            filter: grayscale(20%) contrast(110%);
+            transform: scale(1.01);
         }
         
         .portfolio-item:hover img { 
             transform: scale(1.05);
             filter: grayscale(0%) contrast(120%);
         }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
 
-        /* ТВОРЧЕСКИЙ ПРОЕКТ С ИКОНКАМИ-СИМВОЛАМИ */
+        /* ТВОРЧЕСКИЙ ПРОЕКТ С СТИЛИЗОВАННЫМИ ИКОНКАМИ */
         .project {
-            padding: 8rem 2rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            padding: 8rem 2rem; /* УВЕЛИЧЕН ОТСТУП */
             background: #111111;
             text-align: center;
         }
         
-        /* СТИЛИ ДЛЯ СИМВОЛОВ ВМЕСТО ЭМОДЗИ */
-        .project-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            background: #1a1a1a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #ffffff;
-            border: 1px solid #333;
+        .project-intro {
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .project-intro p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
         
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
         }
+        
         .project-card {
             padding: 2.5rem 2rem;
             text-align: center;
             background: #1a1a1a;
             border-radius: 8px;
+            transition: transform 0.3s ease;
         }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            filter: grayscale(100%) brightness(200%);
+            -webkit-filter: grayscale(100%) brightness(200%);
+        }
+        
         .project-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #ffffff;
         }
+        
         .project-card p {
             color: #cccccc;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
         
-        /* ОПИСАНИЕ ПРОЕКТА */
-        .project-description {
-            max-width: 700px;
-            margin: 3rem auto;
-            text-align: center;
-            font-size: 1.1rem;
-            color: #cccccc;
-            line-height: 1.8;
-        }
-        
-        /* ПРЕИМУЩЕСТВА */
-        .benefits {
+        .benefits-section {
             max-width: 800px;
             margin: 4rem auto;
             text-align: left;
         }
+        
+        .benefits-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
         .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 2.5rem;
-            padding: 2rem;
             background: #1a1a1a;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
             border-radius: 8px;
             border-left: 3px solid #ffffff;
         }
+        
         .benefit-number {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #ffffff;
-            margin-right: 1.5rem;
-            min-width: 40px;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
         }
-        .benefit-content h4 {
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-        }
-        .benefit-content p {
+        
+        .benefit-text {
             color: #cccccc;
             line-height: 1.6;
         }
@@ -346,29 +377,35 @@
             max-width: 600px;
             margin: 4rem auto;
         }
+        
         .step {
             display: flex;
             align-items: flex-start;
             margin-bottom: 2.5rem;
             text-align: left;
         }
+        
         .step-number {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             color: #ffffff;
-            margin-right: 1rem;
-            min-width: 40px;
+            margin-right: 1.5rem;
+            min-width: 50px;
         }
+        
         .step-content h4 {
             color: #ffffff;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
+        
         .step-content p {
             color: #cccccc;
             font-size: 0.9rem;
+            line-height: 1.6;
         }
 
-        /* ФОРМА С ОТПРАВКОЙ НА ПОЧТУ */
+        /* РАБОЧАЯ ФОРМА */
         .application-form {
             max-width: 600px;
             margin: 4rem auto;
@@ -377,9 +414,11 @@
             padding: 3rem;
             border-radius: 8px;
         }
+        
         .form-group {
             margin-bottom: 2rem;
         }
+        
         .form-group label {
             display: block;
             color: #ffffff;
@@ -387,28 +426,33 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
+        
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            background: #0a0a0a;
+            background: #000000;
             border: 1px solid #333;
             color: #ffffff;
             border-radius: 4px;
             font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
             transition: border-color 0.3s ease;
         }
+        
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #ffffff;
         }
+        
         .form-group textarea {
             height: 120px;
             resize: vertical;
         }
+        
         .submit-btn {
             background: #ffffff;
             color: #000000;
@@ -418,10 +462,10 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
             font-size: 1rem;
-            letter-spacing: 1px;
+            width: 100%;
         }
+        
         .submit-btn:hover {
             background: #cccccc;
             transform: translateY(-2px);
@@ -429,26 +473,28 @@
 
         /* КОНТАКТЫ С ОБНОВЛЕННЫМИ ДАННЫМИ */
         .contact { 
-            padding: 8rem 2rem; /* УВЕЛИЧЕНЫ ОТСТУПЫ */
+            padding: 8rem 2rem; /* УВЕЛИЧЕН ОТСТУП */
             text-align: center; 
             max-width: 600px; 
             margin: 0 auto; 
         }
+        
         .contact-info { 
             margin-top: 3rem; 
             line-height: 2.2;
             font-size: 1rem;
             color: #cccccc;
         }
+        
         .contact-info a {
             color: #ffffff;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
         }
+        
         .contact-info a:hover {
             color: #cccccc;
-            text-decoration: underline;
         }
         
         /* ФУТЕР */
@@ -471,6 +517,7 @@
             color: #ffffff;
             letter-spacing: 2px;
         }
+        
         .section-subtitle { 
             font-size: 0.9rem; 
             color: #cccccc; 
@@ -482,55 +529,95 @@
         }
         
         /* АДАПТИВНОСТЬ */
+        @media (max-width: 1200px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.2rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-container { 
                 flex-direction: column; 
-                gap: 1rem; 
+                gap: 1.5rem; 
                 padding: 0 1rem; 
             }
+            
             nav a { 
-                margin: 0 0.5rem; 
-                font-size: 0.8rem; 
+                margin: 0 0.8rem; 
+                font-size: 0.9rem; 
             }
+            
             .hero-content h1 { 
                 font-size: 4rem; /* АДАПТИРОВАНО ДЛЯ МОБИЛЬНЫХ */
+                padding: 0 1rem;
             }
+            
             .hero {
-                padding: 120px 1rem 40px; /* АДАПТИРОВАНО ДЛЯ МОБИЛЬНЫХ */
+                padding: 120px 1rem 40px; /* УВЕЛИЧЕН ОТСТУП ДЛЯ МОБИЛЬНЫХ */
             }
+            
             .portfolio-grid { 
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 0.8rem;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                padding: 0 1rem; 
             }
+            
             .section-title { 
                 font-size: 2.2rem; 
             }
-            .about-stats {
-                grid-template-columns: 1fr;
+            
+            .about { 
+                padding: 4rem 1rem; 
             }
-            .project-grid {
-                grid-template-columns: 1fr;
+            
+            .project {
+                padding: 4rem 1rem;
             }
-            .benefit-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .benefit-number {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
+            
             .application-form {
                 padding: 2rem 1.5rem;
                 margin: 3rem 1rem;
             }
+            
+            .contact {
+                padding: 4rem 1rem;
+            }
+            
+            .logo { 
+                font-size: 1.1rem; 
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-icon {
+                font-size: 2.5rem;
+            }
         }
         
         @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
             .hero-content h1 {
                 font-size: 3rem;
             }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+            
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .project-card {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -569,34 +656,38 @@
 
     <section id="about" class="about">
         <div class="about-text">
-            <h2>МОЯ ЦЕЛЬ</h2>
+            <h2>ОБО МНЕ</h2>
             <p>Моя задача — не просто сделать безупречный кадр, а создать пространство абсолютного доверия и комфорта, где ты сможешь расслабиться, забыть о камере и просто быть. В этот момент и происходит вся магия.</p>
             
             <p>Я работаю с тем, что уже есть: твоя искренняя улыбка, твой задумчивый взгляд, твоя неповторимая энергия. Я лишь помогаю этому проявиться в полную силу и запечатлеваю это.</p>
             
-            <div class="results-block">
-                <div class="results-title">Что ты получишь в результате?</div>
-                <div class="results-list">
-                    <p><strong>Фотографии, от которых захватывает дух</strong> — не просто красивые картинки, а отражение твоей сути, которые заставят сказать: «Да, это настоящая я!»</p>
-                    <p><strong>Преображение самооценки</strong> — опыт, который подарит уверенность, выходящую далеко за рамки фотосессии и останется с тобой навсегда</p>
-                    <p><strong>Освобождение от масок</strong> — возможность наконец-то перестать соответствовать чужим ожиданиям и увидеть свою уникальную красоту</p>
-                </div>
-            </div>
-            
             <div class="about-stats">
                 <div class="stat">
                     <div class="stat-number">2+</div>
-                    <div class="stat-text">года в поиске истинной красоты</div>
+                    <div class="stat-text">года творчества</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">100+</div>
-                    <div class="stat-text">уникальных историй, рассказанных через кадры</div>
+                    <div class="stat-text">уникальных историй</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">1</div>
-                    <div class="stat-text">миссия — быть свидетелем твоей красоты</div>
+                    <div class="stat-text">подход — быть свидетелем красоты</div>
                 </div>
             </div>
+            
+            <div class="results-block">
+                <div class="results-title">Что ты получишь в результате?</div>
+                <ul class="results-list">
+                    <li>Фотографии, от которых захватывает дух и хочется сказать: «Да, это настоящий я!» — изображения, которые станут твоей визитной карточкой</li>
+                    <li>Опыт, который повысит твою самооценку и подарит уверенность, которую ты унесёшь с собой далеко за рамки нашей съёмки</li>
+                    <li>Историю, которую будешь с гордостью рассказывать друзьям и вспоминать через годы</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">
+                <strong>Готов(а) увидеть свою идеальную версию? Ту, что была там все это время.</strong>
+            </p>
         </div>
     </section>
 
@@ -605,7 +696,7 @@
         <p class="section-subtitle">ИСТОРИИ В КАДРАХ</p>
         
         <div class="portfolio-grid">
-            <!-- Все 20 фотографий с пустыми alt для скрытия названий -->
+            <!-- Все 20 фотографий с СКРЫТЫМИ названиями -->
             <div class="portfolio-item"><img src="images/Девка в белом 2.jpg" alt=""></div>
             <div class="portfolio-item"><img src="images/Девка в белом.jpg" alt=""></div>
             <div class="portfolio-item"><img src="images/Девка и дерево.jpg" alt=""></div>
@@ -633,7 +724,7 @@
         <h2 class="section-title">ТВОРЧЕСКИЙ ПРОЕКТ</h2>
         <p class="section-subtitle">ПОИСК ГЕРОЯ ДЛЯ НОВОЙ ИСТОРИИ</p>
 
-        <div class="project-description">
+        <div class="project-intro">
             <p>Раз в сезон я замораживаю коммерческие заказы и провожу кастинг на бесплатную фотосессию для одного человека.</p>
             <p><strong>Почему?</strong> Настоящее искусство рождается не по графику, а по зову сердца. Я инвестирую своё время и силы в поиск новой музы и создание чего-то прекрасного.</p>
         </div>
@@ -651,39 +742,27 @@
             </div>
         </div>
 
-        <div class="benefits">
-            <h3 style="text-align: center; margin-bottom: 3rem; color: #ffffff; font-size: 1.8rem;">Почему тебе стоит рискнуть и подать заявку?</h3>
+        <div class="benefits-section">
+            <h3 class="benefits-title">Почему тебе стоит рискнуть и подать заявку?</h3>
             
             <div class="benefit-item">
-                <div class="benefit-number">1</div>
-                <div class="benefit-content">
-                    <h4>Это не «халява», это титул</h4>
-                    <p>Ты получишь не просто фото. Ты получишь статус «Музы проекта», профессиональное портфолио и доказательство своей уникальности.</p>
-                </div>
+                <div class="benefit-number">1. Это не «халява», это титул</div>
+                <div class="benefit-text">Ты получишь не просто фото. Ты получишь статус «Музы проекта», профессиональное портфолио и доказательство своей уникальности.</div>
             </div>
             
             <div class="benefit-item">
-                <div class="benefit-number">2</div>
-                <div class="benefit-content">
-                    <h4>Полная анонимность до победы</h4>
-                    <p>Твоя заявка увидит только я. Ты в безопасности.</p>
-                </div>
+                <div class="benefit-number">2. Полная анонимность до победы</div>
+                <div class="benefit-text">Твоя заявка увидит только я. Ты в безопасности.</div>
             </div>
             
             <div class="benefit-item">
-                <div class="benefit-number">3</div>
-                <div class="benefit-content">
-                    <h4>Честный отбор</h4>
-                    <p>Я не смотрю на количество подписчиков. Я ищу не самую красивую, а самую «ту самую». Ту, в чьих глазах живет искра для моего следующего кадра.</p>
-                </div>
+                <div class="benefit-number">3. Честный отбор</div>
+                <div class="benefit-text">Я не смотрю на количество подписчиков. Я ищу не самую красивую, а самую «ту самую». Ту, в чьих глазах живет искра для моего следующего кадра.</div>
             </div>
             
             <div class="benefit-item">
-                <div class="benefit-number">4</div>
-                <div class="benefit-content">
-                    <h4>Историю, которую не стыдно рассказать подругам</h4>
-                    <p>Историю о том, как ты перестала сомневаться и начала сиять.</p>
-                </div>
+                <div class="benefit-number">4. Историю, которую не стыдно рассказать подругам</div>
+                <div class="benefit-text">Историю о том, как ты перестала сомневаться и начала сиять.</div>
             </div>
         </div>
 
@@ -715,53 +794,49 @@
             </div>
         </div>
 
-        <div style="max-width: 600px; margin: 4rem auto; text-align: left; background: #1a1a1a; padding: 2.5rem; border-radius: 8px;">
-            <h4 style="color: #ffffff; margin-bottom: 1.5rem;">Важно знать:</h4>
+        <div style="max-width: 600px; margin: 3rem auto; text-align: left; background: #1a1a1a; padding: 2rem; border-radius: 8px;">
+            <h4 style="color: #ffffff; margin-bottom: 1rem;">Важно знать:</h4>
             <p style="color: #cccccc; margin-bottom: 1rem;">📸 <strong>Это действительно бесплатно?</strong> Да. Это творческий проект, а не коммерческая услуга.</p>
             <p style="color: #cccccc; margin-bottom: 1rem;">🎭 <strong>Меня могут не выбрать?</strong> Да, я провожу кастинг чтобы найти героиню, которая идеально подойдет под образ текущего месяца.</p>
             <p style="color: #cccccc;">💫 <strong>Статистика жестока:</strong> из 100 заявок я выберу 1-3. Если не получишь ответа — это не значит, что ты 'недостаточно хороша'.</p>
         </div>
 
-        <div class="application-form">
-            <h3 style="text-align: center; margin-bottom: 2.5rem; color: #ffffff;">Форма для подачи заявки</h3>
+        <!-- РАБОЧАЯ ФОРМА -->
+        <form class="application-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Форма для подачи заявки</h3>
             
-            <form action="https://formsubmit.co/romanphotographerr@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Новая заявка на творческий проект">
-                <input type="hidden" name="_captcha" value="false">
-                
-                <div class="form-group">
-                    <label>Имя и Фамилия</label>
-                    <input type="text" name="name" placeholder="Введите ваше имя" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Твой возраст</label>
-                    <select name="age" required>
-                        <option value="">Выберите возраст</option>
-                        <option value="16-18">16-18 лет</option>
-                        <option value="19-21">19-21 год</option>
-                        <option value="22-25">22-25 лет</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Расскажи о себе</label>
-                    <textarea name="about" placeholder="Что тебя вдохновляет? О чём ты мечтаешь?" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Почему ты хочешь стать участницей этого проекта?</label>
-                    <textarea name="motivation" placeholder="Поделись своими мыслями и ожиданиями" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Ссылка на одну из твоих соцсетей (по желанию)</label>
-                    <input type="text" name="social" placeholder="Instagram, VK или Telegram">
-                </div>
-                
-                <button type="submit" class="submit-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="name">Имя и Фамилия</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Твой возраст</label>
+                <select id="age" name="age" required>
+                    <option value="">Выберите возраст</option>
+                    <option value="16-18">16-18 лет</option>
+                    <option value="19-21">19-21 год</option>
+                    <option value="22-25">22-25 лет</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="about">Расскажи о себе</label>
+                <textarea id="about" name="about" placeholder="Что тебя вдохновляет? О чём ты мечтаешь?" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="motivation">Почему ты хочешь стать участницей этого проекта?</label>
+                <textarea id="motivation" name="motivation" placeholder="Поделись своими мыслями и ожиданиями" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="social">Ссылка на одну из твоих соцсетей (по желанию)</label>
+                <input type="text" id="social" name="social" placeholder="Instagram, VK или Telegram">
+            </div>
+            
+            <button type="submit" class="submit-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+        </form>
     </section>
 
     <section id="contact" class="contact">
@@ -769,9 +844,8 @@
         <p class="section-subtitle">ДАВАЙТЕ СОЗДАДИМ ИСТОРИЮ ВМЕСТЕ</p>
 
         <div class="contact-info">
-            <p>ТЕЛЕФОН: <a href="tel:+7XXXXXXXXXX">+7 XXX XXX XX XX</a></p>
+            <p>ТЕЛЕГРАМ: <a href="https://t.me/RomanPhotograph" target="_blank">@ROMANPHOTOGRAPH</a></p>
             <p>EMAIL: <a href="mailto:romanphotographerr@gmail.com">ROMANPHOTOGRAPHERR@GMAIL.COM</a></p>
-            <p>TELEGRAM: <a href="https://t.me/RomanPhotograph" target="_blank">@ROMANPHOTOGRAPH</a></p>
             <p>INSTAGRAM: <a href="#" target="_blank">@ROMANPHOTOGRAPHY</a></p>
         </div>
     </section>
@@ -801,11 +875,11 @@
             const header = document.querySelector('header');
             const scrolled = window.scrollY > 50;
             
-            header.style.padding = scrolled ? '15px 0' : '20px 0';
+            header.style.padding = scrolled ? '15px 0' : '25px 0';
             header.style.background = scrolled ? 'rgba(0, 0, 0, 0.98)' : 'rgba(0, 0, 0, 0.95)';
         });
 
-        // Анимация появления элементов
+        // Анимация появления элементов портфолио
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -817,9 +891,17 @@
 
         document.querySelectorAll('.portfolio-item').forEach(item => {
             item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
+            item.style.transform = 'translateY(30px)';
             item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(item);
+        });
+
+        // Обработка формы (нужно заменить YOUR_FORM_ID на реальный ID от Formspree)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Здесь будет обработка отправки формы
+            alert('Заявка отправлена! Я свяжусь с тобой в течение 3 дней.');
+            this.reset();
         });
     </script>
 </body>
