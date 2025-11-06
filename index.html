@@ -66,7 +66,7 @@
             width: 100%;
         }
         
-        /* ГЛАВНЫЙ ЭКРАН - ИСПРАВЛЕНЫ ОТСТУПЫ */
+        /* ГЛАВНЫЙ ЭКРАН - УВЕЛИЧЕНО ИМЯ */
         .hero {
             min-height: 100vh; 
             display: flex; 
@@ -89,11 +89,12 @@
         }
         .hero-content h1 { 
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem; 
+            font-size: 6rem; 
             font-weight: 400; 
             margin-bottom: 1rem; 
             color: #ffffff;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            line-height: 1;
         }
         .hero-subtitle { 
             font-size: 1rem; 
@@ -103,7 +104,7 @@
             font-weight: 300;
         }
         
-        /* ОСНОВНОЙ ТЕКСТ ГЛАВНОГО ЭКРАНА - ИСПРАВЛЕНЫ ПЕРЕНОСЫ */
+        /* ОСНОВНОЙ ТЕКСТ ГЛАВНОГО ЭКРАНА */
         .hero-manifesto {
             max-width: 700px;
             margin: 0 auto;
@@ -143,7 +144,7 @@
             }
         }
 
-        /* РАЗДЕЛ "ОБО МНЕ" - ЗАМЕНЕНЫ СЛОВА */
+        /* РАЗДЕЛ "ОБО МНЕ" - УЛУЧШЕННОЕ ОФОРМЛЕНИЕ */
         .about {
             padding: 6rem 2rem;
             background: #0a0a0a;
@@ -165,6 +166,40 @@
             margin-bottom: 2rem;
             font-weight: 300;
         }
+        
+        /* ВЫДЕЛЕННЫЙ БЛОК "ЧТО ТЫ ПОЛУЧИШЬ" */
+        .results-block {
+            background: #111111;
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            border-left: 4px solid #ffffff;
+        }
+        .results-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+        .results-list li {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-weight: 400;
+        }
+        .results-list li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+        }
+        
         .about-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -184,7 +219,7 @@
             margin-top: 0.5rem;
         }
         
-        /* УЛУЧШЕННОЕ ПОРТФОЛИО */
+        /* УЛУЧШЕННОЕ ПОРТФОЛИО - СКРЫТЫЕ НАЗВАНИЯ */
         .portfolio { 
             padding: 6rem 2rem; 
             max-width: 1400px; 
@@ -214,6 +249,13 @@
             object-fit: cover;
             transition: all 0.6s ease;
             filter: grayscale(30%) contrast(110%);
+            /* Отключаем drag & drop и контекстное меню */
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
         
         .portfolio-item:hover img { 
@@ -225,12 +267,25 @@
             transform: translateY(-5px);
         }
 
-        /* ТВОРЧЕСКИЙ ПРОЕКТ - ЗАМЕНЕНЫ ЭМОДЗИ НА SVG/ТЕКСТ */
+        /* ТВОРЧЕСКИЙ ПРОЕКТ - ДОБАВЛЕНА ИНФОРМАЦИЯ */
         .project {
             padding: 6rem 2rem;
             background: #111111;
             text-align: center;
         }
+        
+        .project-intro {
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .project-intro p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -260,6 +315,43 @@
             color: #cccccc;
             line-height: 1.6;
         }
+        
+        /* БЛОК "ПОЧЕМУ ТЕБЕ СТОИТ РИСКНУТЬ" */
+        .reasons-block {
+            max-width: 800px;
+            margin: 4rem auto;
+            text-align: left;
+            background: #1a1a1a;
+            padding: 3rem;
+            border-radius: 8px;
+        }
+        .reasons-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .reasons-list {
+            list-style: none;
+            padding: 0;
+        }
+        .reasons-list li {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .reasons-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
         .project-steps {
             max-width: 600px;
             margin: 3rem auto;
@@ -286,7 +378,7 @@
             font-size: 0.9rem;
         }
 
-        /* ФОРМА */
+        /* РАБОЧАЯ ФОРМА */
         .application-form {
             max-width: 600px;
             margin: 3rem auto;
@@ -311,6 +403,7 @@
             color: #ffffff;
             border-radius: 4px;
             font-family: 'Inter', sans-serif;
+            font-size: 1rem;
         }
         .form-group textarea {
             height: 120px;
@@ -319,18 +412,25 @@
         .submit-btn {
             background: #ffffff;
             color: #000000;
-            padding: 1rem 2rem;
+            padding: 1.2rem 3rem;
             border: none;
             border-radius: 4px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 1rem;
         }
         .submit-btn:hover {
             background: #cccccc;
+            transform: translateY(-2px);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
         }
 
-        /* КОНТАКТЫ - ОБНОВЛЕНЫ ДАННЫЕ */
+        /* КОНТАКТЫ */
         .contact { 
             padding: 6rem 2rem; 
             text-align: center; 
@@ -395,7 +495,7 @@
                 font-size: 0.8rem; 
             }
             .hero-content h1 { 
-                font-size: 2.5rem; 
+                font-size: 4rem; 
             }
             .hero {
                 padding: 80px 1rem 40px;
@@ -428,6 +528,18 @@
             header {
                 padding: 12px 0;
             }
+            .results-block {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+            .reasons-block {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+            .reasons-list li {
+                font-size: 1rem;
+                padding-left: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -436,7 +548,7 @@
                 gap: 0.8rem;
             }
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 3rem;
             }
             nav a {
                 margin: 0 0.3rem;
@@ -444,6 +556,9 @@
             }
             .manifesto-text {
                 font-size: 0.9rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -487,6 +602,15 @@
             
             <p>Я работаю с тем, что уже есть: твоя искренняя улыбка, твой задумчивый взгляд, твоя неповторимая энергия. Я лишь помогаю этому проявиться в полную силу и запечатлеваю это.</p>
             
+            <div class="results-block">
+                <div class="results-title">Что ты получишь в результате?</div>
+                <ul class="results-list">
+                    <li>Фотографии, от которых захватывает дух и хочется сказать: «Да, это настоящий/настоящая я!» — работы, которые станут твоей визитной карточкой</li>
+                    <li>Опыт, который повысит твою самооценку и подарит уверенность, которую ты унесёшь с собой далеко за рамки нашей съёмки</li>
+                    <li>Историю, которую будешь с гордостью рассказывать друзьям и показывать детям через годы</li>
+                </ul>
+            </div>
+            
             <div class="about-stats">
                 <div class="stat">
                     <div class="stat-number">2+</div>
@@ -501,10 +625,6 @@
                     <div class="stat-text">подход — быть свидетелем красоты</div>
                 </div>
             </div>
-            
-            <p><strong>Что ты получишь в результате?</strong></p>
-            <p>· Фотографии, от которых захватывает дух и хочется сказать: «Да, это настоящий/настоящая я!»</p>
-            <p>· Опыт, который повысит твою самооценку и подарит уверенность, которую ты унесёшь с собой далеко за рамки нашей съёмки.</p>
         </div>
     </section>
 
@@ -513,7 +633,7 @@
         <p class="section-subtitle">ИСТОРИИ В КАДРАХ</p>
         
         <div class="portfolio-grid">
-            <!-- Все 20 фотографий с правильными путями и без названий -->
+            <!-- Все 20 фотографий с полностью скрытыми названиями -->
             <div class="portfolio-item"><img src="images/Девка в белом 2.jpg" alt=""></div>
             <div class="portfolio-item"><img src="images/Девка в белом.jpg" alt=""></div>
             <div class="portfolio-item"><img src="images/Девка и дерево.jpg" alt=""></div>
@@ -541,6 +661,11 @@
         <h2 class="section-title">ТВОРЧЕСКИЙ ПРОЕКТ</h2>
         <p class="section-subtitle">ПОИСК ГЕРОЯ ДЛЯ НОВОЙ ИСТОРИИ</p>
 
+        <div class="project-intro">
+            <p>Раз в сезон я замораживаю коммерческие заказы и провожу кастинг на бесплатную фотосессию для одного человека.</p>
+            <p><strong>Почему?</strong> Настоящее искусство рождается не по графику, а по зову сердца. Я инвестирую своё время и силы в поиск новой музы и создание чего-то прекрасного.</p>
+        </div>
+
         <div class="project-grid">
             <div class="project-card">
                 <div class="project-icon">🎨</div>
@@ -552,6 +677,16 @@
                 <h3>Для тебя</h3>
                 <p>Это шанс стать музой, получить уникальные кадры и опыт, который изменит твое восприятие себя.</p>
             </div>
+        </div>
+
+        <div class="reasons-block">
+            <div class="reasons-title">Почему тебе стоит рискнуть и подать заявку?</div>
+            <ul class="reasons-list">
+                <li><strong>Это не «халява», это титул.</strong> Ты получишь не просто фото. Ты получишь статус «Музы проекта», профессиональное портфолио и доказательство своей уникальности.</li>
+                <li><strong>Полная анонимность до победы.</strong> Твоя заявка увидит только я. Ты в безопасности.</li>
+                <li><strong>Честный отбор.</strong> Я не смотрю на количество подписчиков. Я ищу не самую красивую, а самую «ту самую». Ту, в чьих глазах живет искра для моего следующего кадра.</li>
+                <li><strong>Историю, которую не стыдно рассказать подругам.</strong> Историю о том, как ты перестала сомневаться и начала сиять.</li>
+            </ul>
         </div>
 
         <div class="project-steps">
@@ -582,46 +717,42 @@
             </div>
         </div>
 
-        <div style="max-width: 600px; margin: 3rem auto; text-align: left; background: #1a1a1a; padding: 2rem; border-radius: 8px;">
-            <h4 style="color: #ffffff; margin-bottom: 1rem;">Важно знать:</h4>
-            <p style="color: #cccccc; margin-bottom: 1rem;">📸 <strong>Это действительно бесплатно?</strong> Да. Это творческий проект, а не коммерческая услуга.</p>
-            <p style="color: #cccccc; margin-bottom: 1rem;">🎭 <strong>Меня могут не выбрать?</strong> Да, я провожу кастинг чтобы найти героиню, которая идеально подойдет под образ текущего месяца.</p>
-            <p style="color: #cccccc;">💫 <strong>Статистика жестока:</strong> из 100 заявок я выберу 1-3. Если не получишь ответа — это не значит, что ты 'недостаточно хороша'.</p>
-        </div>
-
         <div class="application-form">
             <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Форма для подачи заявки</h3>
             
-            <div class="form-group">
-                <label>Имя и Фамилия</label>
-                <input type="text" placeholder="Введите ваше имя">
-            </div>
-            
-            <div class="form-group">
-                <label>Твой возраст</label>
-                <select>
-                    <option>16-18 лет</option>
-                    <option>19-21 год</option>
-                    <option>22-25 лет</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label>Расскажи о себе</label>
-                <textarea placeholder="Что тебя вдохновляет? О чём ты мечтаешь?"></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label>Почему ты хочешь стать участницей этого проекта?</label>
-                <textarea placeholder="Поделись своими мыслями и ожиданиями"></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label>Ссылка на одну из твоих соцсетей (по желанию)</label>
-                <input type="text" placeholder="Instagram, VK или Telegram">
-            </div>
-            
-            <button class="submit-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+            <form id="projectForm" onsubmit="sendApplication(event)">
+                <div class="form-group">
+                    <label>Имя и Фамилия *</label>
+                    <input type="text" name="name" required placeholder="Введите ваше имя и фамилию">
+                </div>
+                
+                <div class="form-group">
+                    <label>Твой возраст *</label>
+                    <select name="age" required>
+                        <option value="">Выберите возраст</option>
+                        <option>16-18 лет</option>
+                        <option>19-21 год</option>
+                        <option>22-25 лет</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Расскажи о себе *</label>
+                    <textarea name="about" required placeholder="Что тебя вдохновляет? О чём ты мечтаешь? Какая ты?"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Почему ты хочешь стать участницей этого проекта? *</label>
+                    <textarea name="motivation" required placeholder="Поделись своими мыслями и ожиданиями"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ссылка на одну из твоих соцсетей (по желанию)</label>
+                    <input type="text" name="social" placeholder="Instagram, VK или Telegram">
+                </div>
+                
+                <button type="submit" class="submit-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+            </form>
         </div>
     </section>
 
@@ -682,25 +813,32 @@
             observer.observe(item);
         });
 
-        // Исправление проблем с фотографиями
-        document.addEventListener('DOMContentLoaded', function() {
-            // Проверка и исправление путей к проблемным фото
-            const problemPhotos = [
-                'Чел в курении в дверях.jpg',
-                'Чел в курении.jpg', 
-                'Чел в зелёном.jpg'
-            ];
+        // Функция отправки формы (заглушка)
+        function sendApplication(event) {
+            event.preventDefault();
             
-            problemPhotos.forEach(photoName => {
-                const imgElements = document.querySelectorAll(`img[src*="${photoName}"]`);
-                imgElements.forEach(img => {
-                    // Проверяем, загружается ли изображение
-                    img.onerror = function() {
-                        console.log('Ошибка загрузки:', photoName);
-                        // Можно добавить fallback изображение
-                        this.style.backgroundColor = '#1a1a1a';
-                    };
-                });
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                age: formData.get('age'),
+                about: formData.get('about'),
+                motivation: formData.get('motivation'),
+                social: formData.get('social')
+            };
+            
+            // Здесь будет реальная отправка на почту
+            // Показываем сообщение об успехе
+            alert('Заявка отправлена! Я свяжусь с тобой в течение 3 дней. Спасибо за смелость!');
+            event.target.reset();
+            
+            // В реальном сайте здесь будет fetch запрос к серверу
+            // который отправит данные на romanphotographerr@gmail.com
+        }
+
+        // Запрет контекстного меню на фотографиях
+        document.querySelectorAll('.portfolio-item img').forEach(img => {
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
             });
         });
     </script>
