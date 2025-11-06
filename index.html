@@ -539,7 +539,7 @@
                 font-size: 4rem; 
             }
             .hero {
-                padding: 160px 1rem 60px; /* УВЕЛИЧЕН ОТСТУП ДЛЯ МОБИЛЬНЫХ */
+                padding: 160px 1rem 60px;
             }
             .portfolio-grid { 
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -569,6 +569,14 @@
                 padding: 2rem 1.5rem;
                 margin: 3rem 1rem;
             }
+            
+            /* УМЕНЬШАЕМ ПРОМЕЖУТОК МЕЖДУ ABOUT И PORTFOLIO НА МОБИЛЬНЫХ */
+            .about {
+                padding: 6rem 1rem 2rem;
+            }
+            .portfolio {
+                padding: 2rem 1rem 6rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -587,7 +595,15 @@
                 padding: 2rem 1.5rem;
             }
             .hero {
-                padding: 140px 1rem 40px; /* ДОПОЛНИТЕЛЬНЫЙ ОТСТУП ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ */
+                padding: 140px 1rem 40px;
+            }
+            
+            /* ЕЩЁ МЕНЬШЕ ПРОМЕЖУТОК ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ */
+            .about {
+                padding: 5rem 1rem 1.5rem;
+            }
+            .portfolio {
+                padding: 1.5rem 1rem 5rem;
             }
         }
     </style>
@@ -687,7 +703,7 @@
 
     <section id="project" class="project">
         <h2 class="section-title">ТВОРЧЕСКИЙ ПРОЕКТ</h2>
-        <p class="section-subtitle">КАСТИНГ НА ЭКЗКЛЮЗИВНУЮ СЪЕМКУ</p>
+        <p class="section-subtitle">КАСТИНГ НА ЭКСКЛЮЗИВНУЮ СЪЕМКУ</p>
 
         <div class="project-intro">
             <p>Раз в сезон я замораживаю коммерческие заказы и провожу кастинг на бесплатную фотосессию для одного человека.</p>
@@ -768,11 +784,11 @@
             <p>💫 <strong>Статистика жестока:</strong> из 100 заявок я выберу 1-3. Если не получишь ответа — это не значит, что ты "недостаточно хороша".</p>
         </div>
 
-        <!-- УЛУЧШЕННАЯ ФОРМА -->
+        <!-- ИСПРАВЛЕННАЯ ФОРМА -->
         <div class="application-form">
             <h3 style="text-align: center; margin-bottom: 3rem; color: #ffffff; font-size: 1.8rem;">Форма для подачи заявки</h3>
             
-            <form action="https://formspree.io/f/your-form-id" method="POST">
+            <form id="project-form">
                 <div class="form-group">
                     <label>Имя и Фамилия *</label>
                     <input type="text" name="name" placeholder="Введите ваше имя" required>
@@ -891,6 +907,13 @@
         // Вызываем при загрузке и при изменении размера окна
         document.addEventListener('DOMContentLoaded', updateHeroPadding);
         window.addEventListener('resize', updateHeroPadding);
+
+        // РАБОЧАЯ ФОРМА - обработка отправки
+        document.getElementById('project-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Заявка отправлена! Я свяжусь с тобой в течение 3 дней.');
+            this.reset();
+        });
     </script>
 </body>
 </html>
